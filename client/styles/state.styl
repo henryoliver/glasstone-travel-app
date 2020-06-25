@@ -1,0 +1,119 @@
+// States
+
+// Visiblity
+visiblity(media)
+    .visible{media}
+        display block
+
+    .hidden{media}
+        display none
+
+    .opaque{media}
+        opacity 1
+        pointer-events auto
+        will-change opacity
+
+    .transparent{media}
+        opacity 0
+        pointer-events none
+        will-change opacity
+
+    .on{media}
+        transform translate3d(0, 0, 0)
+        will-change transform
+
+    .off{media}
+        transform translate3d(-9999px, 0, 0)
+        will-change transform
+
+// Text
+text(media)
+    .text--uppercase{media}
+        text-transform uppercase
+
+    .text--right{media}
+        text-align right
+
+    .text--left{media}
+        text-align left
+
+    .text--center{media}
+        text-align center
+
+    .text--shadow{media}
+        text-shadow 1px 2px 4px alpha(black, .4)
+
+    .text--pointer{media}
+        cursor pointer
+
+// Default
+visiblity('')
+orientation('')
+text('')
+
+// Small
+@media small
+    visiblity('-sm')
+    text('-sm')
+
+// Medium
+@media medium
+    visiblity('-md')
+    text('-md')
+
+// Large
+@media large
+    visiblity('-lg')
+    text('-lg')
+
+// Beyond
+@media beyond
+    visiblity('-by')
+    text('-by')
+
+// Transitions
+.fade-enter-active
+.fade-leave-active
+    transition opacity 0.2s
+    will-change opacity
+
+.fade-enter
+.fade-leave-to
+    opacity 0
+
+.slide
+    overflow-y hidden
+    transition-property all
+    transition-duration 0.2s
+    transition-timing-function cubic-bezier(0, 1, 0.5, 1)
+
+.slide--closed
+    max-height 0 !important
+
+// Animations
+.zoom-out
+    // duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | name
+    animation 3s ease 0s 1 normal forwards running zoom-out
+    will-change transform
+
+@keyframes zoom-out
+    from
+        opacity 1
+    50%
+        opacity 0
+        transform scale3d(1.2, 1.2, 1.2)
+    to
+        opacity 0
+
+.blink
+    // duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | name
+    animation 1.4s ease 0s infinite normal both running blink
+    will-change transform
+
+@keyframes blink
+    0%
+        opacity 0.2
+    20%
+        opacity 1
+    100%
+        opacity 0.2

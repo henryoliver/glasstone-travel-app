@@ -1,0 +1,47 @@
+{
+    "config": {
+        "environments": {
+            "production": {
+                "target": "http://glasstone-travel.thinkpolen.com"
+            },
+            "development": {
+                "target": "http://glasstone-travel.thinkpolen.com",
+                "http": {
+                    "tls": {
+                        "rejectUnauthorized": false
+                    }
+                }
+            }
+        },
+        "phases": [
+            {
+                "duration": 300,
+                "arrivalRate": 5,
+                "name": "Warm-up"
+            },
+            {
+                "pause": 10
+            },
+            {
+                "duration": 60,
+                "arrivalCount": 30
+            },
+            {
+                "duration": 600,
+                "arrivalRate": 50,
+                "name": "High load phase"
+            }
+        ]
+    },
+    "scenarios": [
+        {
+            "flow": [
+                {
+                    "get": {
+                        "url": "/"
+                    }
+                }
+            ]
+        }
+    ]
+}

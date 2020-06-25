@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Polen Team -- @thinkpolen
+
+# THANKS
+
+    Polen Team
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5 and JavaScript
+    NGINX and NodeJS

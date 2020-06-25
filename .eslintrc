@@ -1,0 +1,32 @@
+{
+    "extends": [
+        "airbnb-base",
+        "plugin:vue/recommended",
+        "plugin:ava/recommended",
+        "plugin:testcafe/recommended"
+    ],
+    "plugins": [
+        "ava",
+        "testcafe"
+    ],
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true,
+        "worker": true,
+        "serviceworker": true
+    },
+    "rules": {
+        # "indent": ["warn", 4],
+        "indent": off,
+        "max-len": ["warn", 120],
+        "semi": ["error", "always"],
+        "comma-dangle": ["error", "never"],
+        "template-curly-spacing": ["error", "always"],
+        "no-param-reassign": ["error", { "props": false }],
+        "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
+        "no-console": ["warn", { "allow": ["info", "warn", "error"] }],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}],
+        "vue/valid-v-if": "error"
+    }
+}

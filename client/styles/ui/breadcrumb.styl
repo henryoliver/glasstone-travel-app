@@ -1,0 +1,51 @@
+.breadcrumb
+    counter-reset breadcrumb
+    margin-bottom 85px
+
+    @media large
+        margin-bottom 100px
+
+.breadcrumb__item
+    font-family 'tuna'
+    line-height 1.4
+    margin-right 24px
+    opacity 0.4
+    padding-left 31px
+    pointer-events none
+    will-change opacity
+    position relative
+
+    @media small
+        margin-right 20px
+
+        a
+            display none
+
+    @media large
+        font-size 24px
+        line-height 1
+
+    &::before
+        background-color dark
+        color beige
+        content counter(breadcrumb)
+        counter-increment breadcrumb
+        display inline-block
+        vertical-align middle
+        font-family 'francois-one'
+        font-size 16px
+        height 22px
+        left 0
+        line-height 1.4
+        position absolute
+        text-align center
+        top 0
+        width 22px
+
+.breadcrumb__item--active
+    opacity 1
+    pointer-events auto
+
+    @media small
+        a
+            display block

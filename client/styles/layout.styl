@@ -1,0 +1,133 @@
+// Layouts
+.box
+    margin-right auto
+    margin-left auto
+    max-width 1342px !important
+
+    padding-right gutter
+    padding-left gutter
+
+    @media large
+        padding-left gutter + 32
+        padding-right gutter + 32
+
+// Flex system
+.flex
+    display flex
+    flex 0 1 auto
+    flex-direction row
+    flex-wrap wrap
+
+flex(media)
+    for num in (0..basis)
+        if num == 0
+            .flex{media}
+                flex-grow 1
+                flex-basis 0
+                max-width 100%
+        else
+            .flex-{num}{media}
+                flex-basis (100/basis)%*num
+                max-width (100/basis)%*num
+
+// Direction
+direction(media)
+    .row{media}
+        flex-direction row
+
+    .column{media}
+        flex-direction column
+
+    .reverse{media}
+        flex-flow row-reverse wrap-reverse
+
+// Alignment
+alignment(media)
+    .start{media}
+        text-align start
+        justify-content flex-start
+
+    .center{media}
+        text-align center
+        justify-content center
+
+    .end{media}
+        text-align end
+        justify-content flex-end
+
+    .top{media}
+        align-items flex-start
+
+    .middle{media}
+        align-items center
+
+    .bottom{media}
+        align-items flex-end
+
+    .stretch{media}
+        align-items stretch
+
+// Self alignment (vertical)
+self-alignment(media)
+    .self-start{media}
+        align-self flex-start
+
+    .self-center{media}
+        align-self center
+
+    .self-end{media}
+        align-self flex-end
+
+    .self-stretch{media}
+        align-self stretch
+
+// Distribution
+distribution(media)
+    .around{media}
+        justify-content space-around
+
+    .between{media}
+        justify-content space-between
+
+// Reordering
+reordering(media)
+    .first{media}
+        order -1
+
+    .last{media}
+        order 1
+
+// Default
+flex('')
+direction('')
+alignment('')
+self-alignment('')
+distribution('')
+reordering('')
+
+// Small
+@media small
+    flex('-sm')
+    direction('-sm')
+    alignment('-sm')
+    self-alignment('-sm')
+    distribution('-sm')
+    reordering('-sm')
+
+// Large
+@media large
+    flex('-lg')
+    direction('-lg')
+    alignment('-lg')
+    self-alignment('-lg')
+    distribution('-lg')
+    reordering('-lg')
+
+// Beyond
+@media beyond
+    flex('-by')
+    direction('-by')
+    alignment('-by')
+    self-alignment('-by')
+    distribution('-by')
+    reordering('-by')

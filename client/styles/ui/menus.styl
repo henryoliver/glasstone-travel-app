@@ -1,0 +1,75 @@
+// Menu hamburger
+.hamburger
+    background-color transparent
+    cursor pointer
+    height 61px
+    position relative
+    padding 14px
+    width 70px
+    margin-bottom 0
+    border 1px solid gray-lighter
+    transition 0.2s ease-in-out
+
+    @media small
+        border-color transparent
+
+.hamburger-trigger
+    display none
+
+    &:checked + .hamburger
+        background-color gray-light
+
+    &:checked + .hamburger .icon-hamburger
+        background-color transparent
+
+        &::before
+        &::after
+            top 14px
+
+        &::before
+            transform rotate(45deg)
+
+        &::after
+            transform rotate(-45deg)
+
+    &:checked ~ .hamburger-navigation
+        opacity 1
+        pointer-events auto
+        transform translateY(20px)
+
+.hamburger-navigation
+    opacity 0
+    transition all 0.2s ease
+
+// Menu anchor
+.menu-anchor
+    display flex
+    margin-bottom 45px
+    margin-top 40px
+
+.menu-anchor__link
+    font-family 'roboto-bold'
+    font-size 12px
+    line-height 1.33
+    margin-right 30px
+    position relative
+    text-transform uppercase
+
+    &:last-child
+        margin-right 0
+
+    &::after
+        background-color yellow-light
+        content ''
+        display block
+        position absolute
+        height 8px
+        width 100%
+        bottom -10px
+
+    &:hover::after
+    &:focus::after
+        background-color black
+
+.menu-anchor__link--active::after
+    background-color black

@@ -1,0 +1,207 @@
+// Lazy loading
+img[lazy='loading']
+    background-repeat no-repeat
+    background-position center
+    background-color alpha(white, 0.9)
+    background-image url('../../assets/images/load.svg')
+
+    width 100%
+    height 0
+    padding-top 67%
+    overflow hidden
+
+img[lazy=error]
+    background-repeat no-repeat
+    background-position center
+    background-size cover
+    background-image url('../../assets/images/placeholder.svg')
+
+    width 100%
+    height 0
+    padding-top 67%
+    overflow hidden
+
+    // &:[lazy=loaded]
+
+// Icons
+i[class^='icon']
+a[class^='icon']
+button[class^='icon']
+    background-repeat no-repeat
+    background-position center
+    background-size contain
+    transform scale(1)
+    transition-duration 0.2s
+    transition-property all
+    transition-property transform
+    transition-timing-function ease
+
+    display inline-block
+
+    &:hover
+    &:focus
+        transform scale(1.1)
+
+.icon-twitter
+    background-image url('../../assets/images/icons/icon-twitter.svg')
+
+    height 17px
+    width 24px
+
+    &:hover
+        filter hue-rotate(220deg) saturate(5)
+
+.icon-facebook
+    background-image url('../../assets/images/icons/icon-facebook.svg')
+
+    height 20px
+    width 20px
+
+    &:hover
+        filter hue-rotate(220deg) saturate(5)
+
+.icon-instagram
+    background-image url('../../assets/images/icons/icon-instagram.svg')
+
+    height 20px
+    width 20px
+
+    &:hover
+        filter hue-rotate(220deg) saturate(5)
+
+icon-hamburger = @block {
+    background-color dark
+    display flex
+    height 3px
+    position absolute
+    width 40px
+}
+
+.icon-hamburger
+    transition 0.3s ease-in-out
+    left 14px
+    { icon-hamburger }
+
+    &::before
+    &::after
+        content ''
+        transition 0.25s ease-in-out
+        { icon-hamburger }
+
+    &::before
+        top 15px
+
+    &::after
+        top 30px
+
+.icon-bed
+    background-image url('../../assets/images/icons/icon-bed.svg')
+    margin-right 10px
+    height 24px
+    width 34px
+
+.icon-shower
+    background-image url('../../assets/images/icons/icon-shower.svg')
+    margin-right 10px
+    height 24px
+    width 26px
+
+.icon-person
+    background-image url('../../assets/images/icons/icon-person.svg')
+    margin-right 10px
+    height 26px
+    width 12px
+
+.icon-camera
+    background-image url('../../assets/images/icons/icon-camera.svg')
+
+    height 19px
+    width 23px
+
+    @media large
+        height 37px
+        width 46px
+
+.icon-star
+    background-image url('../../assets/images/icons/icon-star.svg')
+
+    height 15px
+    width 16px
+
+    cursor pointer
+
+    filter grayscale(100%) brightness(5) brightness(0.9)
+
+    &:hover
+    &:focus
+        filter none
+
+.icon-star--full
+    filter none
+
+.icon-star--large
+    height 35px
+    width 36px
+
+.icon-check
+    background-image url('../../assets/images/icons/icon-check.svg')
+
+    height 25px
+    width 35px
+
+.icon-check--small
+    background-image url('../../assets/images/icons/icon-check-small.svg')
+
+    height 12px
+    width 17px
+
+.icon-check--circle
+    background-image url('../../assets/images/icons/icon-check-circle.svg')
+
+    height 48px
+    width 48px
+    margin-right 10px
+    vertical-align sub
+
+.icon-dollar
+    background-color yellow
+    color white
+    font-style normal
+    font-weight bold
+    font-size 14px
+    text-align center
+    vertical-align bottom
+    line-height 1.4
+    height 20px
+    width 20px
+
+// Arrows
+i[class*='arrow']
+a[class*='arrow']
+button[class*='arrow']
+    background-repeat no-repeat
+    background-position center
+    background-size contain
+    background-color transparent
+
+    display inline-block
+
+.arrow
+    height 45px
+    width 27px
+
+.arrow--left
+    background-image url('../../assets/images/arrow-left.svg')
+
+.arrow--right
+    background-image url('../../assets/images/arrow-right.svg')
+
+.arrow--small
+    background-image url('../../assets/images/arrow-small.svg')
+    transition 0.2s ease-in-out
+
+    height 8px
+    width 14px
+
+.arrow--small--up
+    transform rotate(180deg)
